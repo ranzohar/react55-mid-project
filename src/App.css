@@ -1,0 +1,153 @@
+
+.main-page {
+    display: flex;
+    min-height: 100vh;
+    align-items: flex-start; /* or stretch */
+}
+
+.library {
+    position: sticky; /* Stays fixed while scrolling, but stays in the flex flow */
+    top: 0;
+    width: 275px;
+    min-height: 100vh;
+    background-color: #b41b1b;
+    box-sizing: border-box;
+    flex-shrink: 0; /* Prevents the sidebar from getting squeezed */
+    display: flex;        /* horizontal layout */
+    flex-direction: row;  /* optional, default */
+    flex-wrap: wrap;      /* allows items to move to next line */
+    gap: 10px;
+    align-content: flex-start;   
+}
+
+.dashboard {
+    flex-grow: 1; /* Automatically takes up all remaining space */
+    padding: 1rem;
+}
+
+.spotify-tracks-container {
+    display: flex;        /* horizontal layout */
+    align-items: center;  /* no quotes, ends with semicolon */
+    flex-direction: row;  /* optional, default */
+    flex-wrap: wrap;      /* allows items to move to next line */
+    gap: 10px;            /* spacing between items */
+}
+
+.flex-row-center {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.search-button {
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 1.2;
+  border: 1px solid #000000ff;
+  border-left: none;
+  background: grey;
+  cursor: pointer;
+}
+
+.track-container {
+  position: relative;
+  display: inline-block;
+  align-items: flex-start;
+  width: 250px;        /* fixed width */
+  max-height: 300px;   /* limit height of hover area */
+}
+
+.track-image {
+  display: block;
+}
+
+.suggestion-popup {
+  position: absolute;
+  top: 0;
+  left: 120%;
+  width: 100%;
+  z-index: 10;
+}
+
+.more-tracks-container {
+  border: 1px solid #000000ff;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: rgba(105, 54, 54, 0.5); /* #69363679 */
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.more-tracks-header {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.more-tracks-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.track-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 12px;
+  max-width: 400px;
+}
+
+.track-image {
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 12px;
+  width: 145px; /* same height as image */
+  overflow: hidden;
+}
+
+.track-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+
+.track-artist {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: #888;
+}
+
+.play-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;       /* makes it round */
+  border: none;
+  background-color: #1DB954; /* Spotify green */
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.play-button:hover {
+  background-color: #17a44c;
+  transform: scale(1.1);     /* subtle hover effect */
+}
+
+.play-button:active {
+  transform: scale(0.95);    /* click feedback */
+}
